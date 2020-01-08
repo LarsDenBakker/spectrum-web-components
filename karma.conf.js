@@ -25,6 +25,7 @@ module.exports = (config) => {
             ],
             esm: {
                 nodeResolve: true,
+                coverageExclude: ['projects/**/*'],
             },
             browsers: ['FirefoxHeadlessCustom'],
             customLaunchers: {

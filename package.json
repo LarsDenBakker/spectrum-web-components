@@ -58,7 +58,7 @@
         "prelerna-publish": "yarn get-ready && yarn custom-element-json",
         "lerna-publish": "lerna publish --message 'chore: release new versions'",
         "test": "yarn build && yarn test:ci",
-        "test:build": "tsc --build test/tsconfig-test.json",
+        "test:build": "tsc --build test/tsconfig-test.json && lerna exec --scope @bundled-es-modules/testing-library-dom -- yarn build",
         "test:ci": "yarn test:build && karma start --coverage",
         "test:start": "karma start",
         "test:watch": "run-p watch 'test:build -w' 'test:start --auto-watch=true --single-run=false'",
